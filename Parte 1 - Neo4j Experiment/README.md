@@ -14,3 +14,9 @@ O importante é que no final, os seguintes conhecimentos sejam adquiridos:
 A instalação do Neo4J se encontra no seguinte [link](https://neo4j.com/download/). Antes de fazer o download, precisa preencher o formulario e o download se inicia automaticamente. Também é disponibilizado um pdf do livro "Graph Databases"
 
 ### Criação de um banco de dados com Neo4J
+
+#### Referencias
+* [Tutorial: Getting Started with Cypher](https://neo4j.com/developer/cypher/guide-cypher-basics/)
+* [Neo4j - Overview](https://www.tutorialspoint.com/neo4j/neo4j_overview.htm)
+* [Getting Started](https://neo4j.com/developer/get-started/)
+* []()
