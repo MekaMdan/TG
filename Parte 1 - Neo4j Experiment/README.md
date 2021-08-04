@@ -15,7 +15,7 @@ A instalação do Neo4J se encontra no seguinte [link](https://neo4j.com/downloa
 
 ### Criação de um banco de dados com Neo4J
 
-#### Referencias
+#### Referências
 * [Tutorial: Getting Started with Cypher](https://neo4j.com/developer/cypher/guide-cypher-basics/)
 * [Neo4j - Overview](https://www.tutorialspoint.com/neo4j/neo4j_overview.htm)
 * [Getting Started](https://neo4j.com/developer/get-started/)

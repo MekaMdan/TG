@@ -13,6 +13,6 @@ O projeto é dividido nas seguintes etapas:
 
 ![GANBATTE2](https://64.media.tumblr.com/0993d1a132c5cd9e561064a8c8faa83e/4d3909bbc8e4562a-60/s500x750/008938cd4f3b4892a9b8756d97eef71b441be360.gifv)
 
-#### Referencias
+#### Referências
 * [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#github-custom-emoji)
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
