@@ -10,7 +10,6 @@ O projeto é dividido nas seguintes etapas:
 
 ## __*As partes serão definidas a medida que o projeto for se concretizando*__
 
-:hugs:
 
 ![GANBATTE2](https://64.media.tumblr.com/0993d1a132c5cd9e561064a8c8faa83e/4d3909bbc8e4562a-60/s500x750/008938cd4f3b4892a9b8756d97eef71b441be360.gifv)
 
