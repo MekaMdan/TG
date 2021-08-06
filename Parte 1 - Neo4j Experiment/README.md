@@ -294,6 +294,7 @@ Nesta query, hollywood se refere a qualquer nó no banco de dados (neste caso, t
     DROP INDEX ON :Person(name)
     ```
 
+9. `CREATE CONSTRAINT ON (movie:Movie) ASSERT movie.title IS UNIQUE`
 
 ### Referências
 * [Tutorial: Getting Started with Cypher](https://neo4j.com/developer/cypher/guide-cypher-basics/)
