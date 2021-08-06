@@ -10,6 +10,7 @@ O importante é que no final, os seguintes conhecimentos sejam adquiridos:
 - [x] Modo em que cada Relação é representado
 - [ ] Conseguir explicar o processo e o geral sobre Neo4J
 - [ ] Modo que propriedades das entidades é representado
+- [ ] Entender o básico de Cypher Query
 
 ### Instalação
 A instalação do Neo4J se encontra no seguinte [link](https://neo4j.com/download/). Antes de fazer o download, precisa preencher o formulario e o download se inicia automaticamente. Também é disponibilizado um pdf do livro "Graph Databases"
