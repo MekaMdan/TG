@@ -241,7 +241,59 @@ Nesta query, hollywood se refere a qualquer nó no banco de dados (neste caso, t
 
     ![Schema](./imagens/Convençãodosnomes.png)
 
-3.
+3. Deletar Todo o banco de dados
+    ```
+    MATCH (n) DETACH DELETE n
+    ```
+
+4. Verifica Banco de dados
+    ```
+    MATCH (n) RETURN n
+    ```
+
+5. Cláusula *REMOVE*
+    
+    A clausula *REMOVE* é usada para remover propriedades e labels de elementos do grafo
+    ```
+    MATCH (soren {name: 'Soren'})
+    REMOVE soren.age
+    RETURN soren
+    ```
+
+6. Cláusula *DELETE*
+    
+    A cláusula *DELETE* é usada para deletar nós e relacionamentos identificados dentro de uma cláusula *MATCH*, possivelmente qualificada por um *WHERE*. 
+    **Não se pode deletar um nó sem tambem deletar relacionamentos que começam OU teminam no nó**
+    ```
+    MATCH (n)-[r]-()
+    WHERE n.name = 'Soren'
+    DELETE r
+    ```
+
+7. Cláusula *CREATE INDEX*
+
+    A cláusura *CREATE INDEX ON* vai criar e popular a index em uma propriedade para todos os nós que tiverem a label (o index será a propriedade que irá definir o nó(elemento) ).
+    
+    ***VERIFICAR O [LINK](https://neo4j.com/docs/cypher-manual/current/administration/indexes-for-search-performance/#administration-indexes-introduction)***
+    
+    (forma atual)
+    ```
+    CREATE INDEX [optionalName] FOR (p:Person) ON (p.name)
+    ```
+
+    (forma descontinuada)
+
+    ```
+    CREATE INDEX ON :Person(name)
+    ```
+
+8. Cláusula *DROP INDEX ON*
+    
+    A cláusura *DROP INDEX ON* irá derrubar o index em todos os nós com a label
+    ```
+    DROP INDEX ON :Person(name)
+    ```
+
 
 ### Referências
 * [Tutorial: Getting Started with Cypher](https://neo4j.com/developer/cypher/guide-cypher-basics/)
@@ -250,3 +302,4 @@ Nesta query, hollywood se refere a qualquer nó no banco de dados (neste caso, t
 * [Setting up a go-neo4j ecosystem](https://medium.com/@angadsharma1016/optimizing-go-neo4j-concurrency-patterns-810dff25f88f)
 * [Challenges of neo4j at the heart of software](https://dev.to/l04db4l4nc3r/challenges-of-neo4j-at-the-heart-of-software-2dbi)
 * [GraphAcademy Online Training](https://neo4j.com/graphacademy/online-training/)
+* [Indexes for search performance](https://neo4j.com/docs/cypher-manual/current/administration/indexes-for-search-performance/#administration-indexes-introduction)
