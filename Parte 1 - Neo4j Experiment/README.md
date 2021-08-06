@@ -8,7 +8,6 @@ O importante é que no final, os seguintes conhecimentos sejam adquiridos:
 - [ ] Criação de BD com Neo4J
 - [x] Modo em que cada Entidade é representado
 - [x] Modo em que cada relacionamento é representado
-- [ ] Conseguir explicar o processo e o geral sobre Neo4J
 - [x] Modo que propriedades das entidades é representado
 - [x] Entender o básico de Cypher Query
 
@@ -233,6 +232,16 @@ Na query, usa-se apenas a variável relatedTo que irá tentar achar todos os rel
     MATCH(p:Person{name: 'Kevin Bacon'})-[*1..3]-(hollywood) return DISTINCT p, hollywood
     ```
 Nesta query, hollywood se refere a qualquer nó no banco de dados (neste caso, tanto os nós Person e Movie, além dos adicionados durante o teste, mas não documentados, tipo FaBase)
+
+### Comandos uteis de Cypher
+
+1. `CALL db.schema.visualization` : retorna os nós(esquema) e os relacionamentos que os ligam
+
+2. Convenção de Nomes 
+
+    ![Schema](./imagens/Convençãodosnomes.png)
+
+3.
 
 ### Referências
 * [Tutorial: Getting Started with Cypher](https://neo4j.com/developer/cypher/guide-cypher-basics/)
