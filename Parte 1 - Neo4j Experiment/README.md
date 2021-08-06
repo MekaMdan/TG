@@ -51,6 +51,7 @@ As estruturas do banco de dados são representadas atraves de nós e de relaçõ
 #### Nós
 Nós representam entidades. Um nó seria similar a uma fileira em um banco de dados relacional.
 No projeto tutorial de Neo4j (*Movies Project*) temos dois nós, o de Person e o de Movies. Em cypher query, um nó é contido entre parênteses - como `(p:Person)`, onde p é a variável e Person é o nó que está sendo referido
+
 #### Relações
 Dois nós podem estar conectados com uma relação. No caso do projeto tutorial, Person se relaciona com Movie atraves das relações *ACTED_IN*, *REVIEWED*, *PRODUCED*, *WROTE* e *DIRECTED*.
 Em cypher query, relações são contidas em colchetes, como `[w:WORKS_FOR]`, onde w é uma variável e *WORKS_FOR* é o tipo de relação que esta está se referindo.
@@ -82,7 +83,35 @@ MATCH (n) RETURN n limit 20
 retornaria no maxímo 20 itens de todos nós
 
 ### Propriedades
-[*to be continued*]
+Propriedades são pares de nomes e valores usados para adicionar atributos para nós e relações
+
+Para retornar propriedades especificas de um nó, pode-se escrever 
+```
+MATCH (m:Movie) return m.title, m.realeased
+```
+O resultado dessa query é o nó de Movies, com apenas o valor das propriedades titulo e data de lançamento. 
+Tendo isso em mente, o tutorial sugere o seguinte exercício
+1. Escreva uma query que retorna as propriedades nome e data de nascimento do nó de Person
+    Resposta:
+    ```
+    Match (p:Person) return p.name,p.born
+    ```
+
+### Criar um Nó ou uma Relação
+
+A cláusula de criação pode ser usada para criar um novo Nó ou relacionamento
+```
+CREATE (p:Person {name: 'John Doe'}) return p
+```
+O comando gera um novo nó com a propriedade *name* tendo o valor de 'John Doe'
+Tendo isso em mente, o tutorial sugere o seguinte exercicio:
+
+1. Criar um novo nó de Person com a propriedade *name* tendo o valor do seu nome
+Resposta:
+    ```
+    CREATE (p:Person {name:'<Colocar o nome aqui>'}) RETURN p
+    ```
+
 
 ### Referências
 * [Tutorial: Getting Started with Cypher](https://neo4j.com/developer/cypher/guide-cypher-basics/)
