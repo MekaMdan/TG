@@ -14,7 +14,7 @@ O importante é que no final, os seguintes conhecimentos sejam adquiridos:
 ### Instalação
 A instalação do Neo4J se encontra no seguinte [link](https://neo4j.com/download/). Antes de fazer o download, precisa preencher o formulario e o download se inicia automaticamente. Também é disponibilizado um pdf do livro "Graph Databases"
 
-### Criação de um banco de dados com Neo4J
+### Neo4j
 Para mexer com Neo4J, vê-se a necessidade de aprender Cypher
 #### Cypher
 Cypher é a linguagem de query de grafo utilizada pelo Neo4j. Uma query cypher tem a seguinte aparencia
