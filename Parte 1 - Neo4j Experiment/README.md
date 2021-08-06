@@ -303,3 +303,4 @@ Nesta query, hollywood se refere a qualquer nó no banco de dados (neste caso, t
 * [Challenges of neo4j at the heart of software](https://dev.to/l04db4l4nc3r/challenges-of-neo4j-at-the-heart-of-software-2dbi)
 * [GraphAcademy Online Training](https://neo4j.com/graphacademy/online-training/)
 * [Indexes for search performance](https://neo4j.com/docs/cypher-manual/current/administration/indexes-for-search-performance/#administration-indexes-introduction)
+* [Getting started with neo4j in 10 minutes](https://towardsdatascience.com/getting-started-with-neo4j-in-10-minutes-94788d99cc2b)
