@@ -43,7 +43,9 @@ Logo, podemos entender que o comando MATCH serve para buscar um dado no db. Logo
 
 ### Nós e Relações
 As estruturas do banco de dados são representadas atraves de nós e de relações entre os nós
+
 ![Schema](./imagens/schema.svg)
+
 #### Nós
 Nós representam entidades. Um nó seria similar a uma fileira em um banco de dados relacional.
 No projeto tutorial de Neo4j (*Movies Project*) temos dois nós, o de Person e o de Movies. Em cypher query, um nó é contido entre parênteses - como `(p:Person)`, onde p é a variável e Person é o nó que está sendo referido
