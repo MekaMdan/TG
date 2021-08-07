@@ -1,0 +1,51 @@
+// Criar os Animais
+CREATE(:Animal{nome: "Safir", pet_id: 1, sexo: "M", porte:"grande", idade: "filhote", especie: "cão"})
+CREATE(:Animal{nome: "Sindy", pet_id: 2, sexo: "F", porte:"médio", idade: "filhote", especie: "cão"})
+CREATE(:Animal{nome: "Zeus", pet_id: 3, sexo: "M", porte:"pequeno", idade: "jovem", especie: "cão"})
+CREATE(:Animal{nome: "Naíma", pet_id: 4, sexo: "F", porte:"grande", idade: "adulto", especie: "cão"})
+CREATE(:Animal{nome: "Sissa", pet_id: 5, sexo: "F", porte:"peq-médio", idade: "adulto", especie: "gato"})
+CREATE(:Animal{nome: "Maya", pet_id: 6, sexo: "F", porte:"médio", idade: "adulto", especie: "cão"})
+CREATE(:Animal{nome: "Aslam", pet_id: 7, sexo: "M", porte:"peq-médio", idade: "filhote", especie: "cão"})
+CREATE(:Animal{nome: "Cachimbo", pet_id: 8, sexo: "M", porte:"grande", idade: "adulto", especie: "cão"})
+CREATE(:Animal{nome: "Abdul", pet_id: 9, sexo: "M", porte:"peq-médio", idade: "jovem", especie: "gato"})
+CREATE(:Animal{nome: "Uira", pet_id: 10, sexo: "M", porte:"pequeno", idade: "jovem", especie: "gato"})
+CREATE(:Animal{nome: "Izamel", pet_id: 11, sexo: "F", porte:"mini", idade: "jovem", especie: "cão"})
+CREATE(:Animal{nome: "Belinha", pet_id: 12, sexo: "F", porte:"méd-grande", idade: "filhote", especie: "gato"})
+CREATE(:Animal{nome: "Fanta", pet_id: 13, sexo: "F", porte:"pequeno", idade: "jovem", especie: "cão"})
+CREATE(:Animal{nome: "Nefertite", pet_id: 14, sexo: "F", porte:"médio", idade: "jovem", especie: "gato"})
+CREATE(:Animal{nome: "Petit", pet_id: 15, sexo: "M", porte:"médio", idade: "jovem", especie: "cão"})
+CREATE(:Animal{nome: "Kau", pet_id: 16, sexo: "M", porte:"méd-grande", idade: "idoso", especie: "gato"})
+CREATE(:Animal{nome: "Belinha", pet_id: 17, sexo: "F", porte:"méd-grande", idade: "idoso", especie: "gato"})
+CREATE(:Animal{nome: "Kell", pet_id: 18, sexo: "M", porte:"médio", idade: "idoso", especie: "cão"})
+CREATE(:Animal{nome: "Minie", pet_id: 19, sexo: "F", porte:"peq-médio", idade: "filhote", especie: "cão"})
+CREATE(:Animal{nome: "King", pet_id: 20, sexo: "M", porte:"pequeno", idade: "jovem", especie: "cão"})
+
+// Criar as Pessoas
+CREATE(:People{nome: "Lotti Rains", pesId: 1, sexo: "F"})
+CREATE(:People{nome: "Gayle Fozzard", pesId: 2, sexo: "M"})
+CREATE(:People{nome: "Harmonie Offord", pesId:3, sexo: "F"})
+CREATE(:People{nome: "Daphne Pickover", pesId: 4, sexo: "F"})
+CREATE(:People{nome: "Donica Patrono", pesId: 5, sexo: "F"})
+CREATE(:People{nome: "Vivyan Vigneron", pesId: 6, sexo: "F"})
+CREATE(:People{nome: "Coral McCooke", pesId: 7, sexo: "F"})
+CREATE(:People{nome: "Margarete Gelardi", pesId: 8, sexo: "F"})
+CREATE(:People{nome: "Charlene Ferrone", pesId: 9, sexo: "F"})
+CREATE(:People{nome: "Nevins Aps", pesId: 10, sexo: "M"})
+
+
+// Criar o relacionamento
+MATCH (p:People), (b:Animal) WHERE p.pesId = 2 and b.pet_id = 2 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 4 and b.pet_id = 4 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 5 and b.pet_id = 5 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 6 and b.pet_id = 6 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 7 and b.pet_id = 9 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 8 and b.pet_id = 10 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 10 and b.pet_id = 13 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 2 and b.pet_id = 14 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 4 and b.pet_id = 16 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 8 and b.pet_id = 17 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+MATCH (p:People), (b:Animal) WHERE p.pesId = 2 and b.pet_id = 18 CREATE (p)-[a:Adota]->(b) RETURN a,b,p
+
+
+// Remove Relacionamento
+MATCH (n)-[r]-() "WHERE n.pesId = 2" DELETE r
