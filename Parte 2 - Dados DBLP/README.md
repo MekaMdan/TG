@@ -3,10 +3,18 @@
 Nesta etapa, os dados utilizados serão obtidos atraves de webscraping sites de interesse e serão tratados para poderem ser inseridos no banco de dados Neo4J
 
 ## Objetivos
+- [ ] Definir Perguntas para serem respondidas
 - [ ] Criar função que suponha o genero pelo nome
 - [ ] Obter professores da amostra e aplicar função de gênero
 - [ ] Obter pesquisas associadas aos professores
 - [ ] Criação das perguntas da pesquisa
+
+### 0 - Perguntas da pesquisa
+
+- Como é a rede de colaboração feminida e masculina?
+    - A rede feminina é semelhante a masculina visualmente?
+- Avarage degree(f/m)
+- Mostrar apenas pesquisadoras mulheres e apenas pesquisadores homens
 
 ### 1 - Criação das funções de gênero
 
