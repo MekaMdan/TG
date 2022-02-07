@@ -20,7 +20,7 @@ Nesta etapa, os dados utilizados serão obtidos atraves de webscraping sites de 
 
 Para iniciar, utiliza-se os sites de professores de pós graduação da aréa de computação das seguintes universidades: USP, UNB, UFAM, UFMG, UFRN
 
-#### Verificação da Função de gênero
+#### Verificação da função de gênero nos dados da amostra
 
 | Universidade | Total | Acertos | Erros | Não identificados |
 |--------------|-------|---------|-------|-------------------|
