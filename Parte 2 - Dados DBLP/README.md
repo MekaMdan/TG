@@ -3,11 +3,11 @@
 Nesta etapa, os dados utilizados serão obtidos atraves de webscraping sites de interesse e serão tratados para poderem ser inseridos no banco de dados Neo4J
 
 ## Objetivos
-- [ ] Definir Perguntas para serem respondidas
-- [ ] Criar função que suponha o genero pelo nome
-- [ ] Obter professores da amostra e aplicar função de gênero
+- [x] Definir Perguntas para serem respondidas
+- [x] Criar função que suponha o genero pelo nome
+- [x] Obter professores da amostra e aplicar função de gênero
 - [ ] Obter pesquisas associadas aos professores
-- [ ] Criação das perguntas da pesquisa
+- [ ] Criação dos comandos chypher que respondam as perguntas da pesquisa
 
 ### 0 - Perguntas da pesquisa
 
@@ -29,3 +29,4 @@ Para iniciar, utiliza-se os sites de professores de pós graduação da aréa de
 | UFRN         |  29   |    28   |   0   |        1          |
 | UnB          |  30   |    28   |   0   |        2          |
 | USP          |  40   |    39   |   0   |        1          |
+| Outros       |       |         |       |                   |
