@@ -1,0 +1,15 @@
+Primeiro Problema:
+	Não tem genero na entidade Autor
+		Nomes estrangeiros podem complicar 
+
+*Não tem o nó Programa*
+*Não usar o MergeNode do gitlab*
+
+(Os autores dos programas estão na pasta seed)
+
+-- Começar manipulando os dados dos docentes da unb ou ufrm(a menor)
+-- Montar os dados no Neo4J --
+	-- Procurar bibliotecas que gerem o genero baseado em nome --
+	-- Ver acuracia --
+
+Estudar 

@@ -1,0 +1,7 @@
+Questões de pesquisa:
+
+* Mostrar apenas homens/mulheres
+- Como é a rede de colaboração? (f/m)
+	-> o f é semelhante ao m visualmente?
+* avarage degree (f/m)
+- 

@@ -6,7 +6,10 @@ O projeto é dividido nas seguintes etapas:
 
 - Parte 1 - Aprendizado em Neo4J:
     - Estudo sobre Neo4J para entender sobre este banco de dados, como a informação é armazenada e porque seu uso é bom
-- Parte 2 - *TO BE DEFINED*
+- Parte 2 - Perguntas do TCC:
+    - Definir perguntas a serem respondidas no projeto, refinar os dados para que possam ser colocados em um banco de dados no Neo4J e definir operações para responder as perguntas criadas
+- Parte 3 - ?
+    - ?
 
 ## __*As partes serão definidas a medida que o projeto for se concretizando*__
 
