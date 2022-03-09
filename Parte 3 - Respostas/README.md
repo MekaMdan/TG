@@ -14,7 +14,7 @@
 
 - [X] Mostrar apenas pesquisadoras mulheres (e suas pesquisas) e apenas homens (e suas pesquisas)
 - [ ] Rede de colabolação interna
-- [ ] Rede de colabolação externa
+- [?] Rede de colabolação externa
 - [ ] Obter rede de colabolação masculina e feminina
 - [ ] Avarage Degree feminina/ masculina
 
@@ -82,10 +82,12 @@
 
 
 
-2.
-3.
-4.
-5.
+2. 
+
+3. Rede de colabolação externa
+    Talvez seja a mesma coisa do grafo de autores separados por genero sem co-autores da unb
+4. 
+5. 
 
 ## Queries finais para cada pergunta
 
