@@ -102,7 +102,6 @@
     
     F-F
     ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-f-to-f.png)
-    as
 
 
     Só de homens:
@@ -111,6 +110,12 @@
 
     MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co{gender:"M"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
     ```
+    M-geral
+    ![Grafo de colabolação interna masculina-geral](./imagens/graph-unb-pesq-interna-m-to-geral.png)
+    
+    M-M
+    ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-m-to-m.png)
+
 
 3. Rede de colabolação externa
     Talvez seja a mesma coisa do grafo de autores separados por genero sem co-autores da unb
