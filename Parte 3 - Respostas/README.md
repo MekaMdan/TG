@@ -28,6 +28,23 @@
     Gerando o seguinte grafo:
     ![Pesquisas por autores Unb](./imagens/graph-pesq-unb-autores.png)
 
+    Agora precisamos separar por genero
+
+    ```
+
+    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
+
+    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
+
+    ```
+
+    Grafos gerados por autores Homens:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m.png)
+
+    Grafos gerados por autoras mulheres:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f.png)
+    
+    
     Iremos excluir co-autores que tem um relacionamento
 
     Sem co-autores do genero oposto da unb:
@@ -61,21 +78,7 @@
 
 
 
-    Agora precisamos separar por genero
 
-    ```
-
-    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
-
-    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
-
-    ```
-
-    Grafos gerados por autores Homens:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m.png)
-
-    Grafos gerados por autoras mulheres:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f.png)
 2.
 3.
 4.
