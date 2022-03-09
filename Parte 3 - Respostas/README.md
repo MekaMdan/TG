@@ -82,7 +82,35 @@
 
 
 
-2. 
+2. Rede de colabolação interna
+
+    Geral:
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co)-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+    ```
+    ![Grafo de colabolação interna geral](./imagens/graph-unb-pesq-interna-geral.png)
+
+
+    Só de mulheres:
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co)-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co{gender:"F"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+    ```
+    F-geral
+    ![Grafo de colabolação interna feminina-geral](./imagens/graph-unb-pesq-interna-f-to-geral.png)
+    
+    F-F
+    ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-f-to-f.png)
+    as
+
+
+    Só de homens:
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co)-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co{gender:"M"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+    ```
 
 3. Rede de colabolação externa
     Talvez seja a mesma coisa do grafo de autores separados por genero sem co-autores da unb
