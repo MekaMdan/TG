@@ -12,7 +12,7 @@
 
 ## Progresso das Respostas
 
-- [ ] Mostrar apenas pesquisadoras mulheres (e suas pesquisas) e apenas homens (e suas pesquisas)
+- [X] Mostrar apenas pesquisadoras mulheres (e suas pesquisas) e apenas homens (e suas pesquisas)
 - [ ] Rede de colabolação interna
 - [ ] Rede de colabolação externa
 - [ ] Obter rede de colabolação masculina e feminina
@@ -20,7 +20,62 @@
 
 ## Pensamentos para criar as queries
 
-1.
+1.  Primeiro achamos como associar professores à Unb e mostrar suas pesquisas
+
+    ```
+    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
+    ```
+    Gerando o seguinte grafo:
+    ![Pesquisas por autores Unb](./imagens/graph-pesq-unb-autores.png)
+
+    Iremos excluir co-autores que tem um relacionamento
+
+    Sem co-autores do genero oposto da unb:
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE NOT (co{gender:"M"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE NOT (co{gender:"F"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+    ```
+
+    Grafos gerados por autores Homens:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co-semunb.png)
+
+    Grafos gerados por autoras mulheres:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
+
+
+
+    Com co-autores do genero oposto da unb:
+
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r,co,rco
+
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r,co,rco
+    ```
+
+    Grafos gerados por autores Homens:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co.png)
+
+    Grafos gerados por autoras mulheres:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f-co.png)
+
+
+
+    Agora precisamos separar por genero
+
+    ```
+
+    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
+
+    MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
+
+    ```
+
+    Grafos gerados por autores Homens:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m.png)
+
+    Grafos gerados por autoras mulheres:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f.png)
 2.
 3.
 4.
