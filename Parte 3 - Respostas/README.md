@@ -20,7 +20,10 @@
 
 ## Pensamentos para criar as queries
 
-1.  Primeiro achamos como associar professores à Unb e mostrar suas pesquisas
+1.  Mostrar apenas pesquisadores unb
+
+    Primeiro achamos como associar professores à Unb e mostrar suas pesquisas
+
 
     ```
     MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
