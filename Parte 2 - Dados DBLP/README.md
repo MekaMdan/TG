@@ -2,16 +2,18 @@
 
 Nesta etapa, os dados utilizados serão obtidos atraves de webscraping sites de interesse e serão tratados para poderem ser inseridos no banco de dados Neo4J
 
+
+
 ## Objetivos
 - [x] Definir Perguntas para serem respondidas
 - [x] Criar função que suponha o genero pelo nome
 - [x] Obter professores da amostra e aplicar função de gênero
-- [ ] Obter pesquisas associadas aos professores
-- [ ] Criação dos comandos chypher que respondam as perguntas da pesquisa
+- [x] Obter pesquisas associadas aos professores
+- [ ] Criação dos comandos chypher para preencher o banco de dados
 
 ### 0 - Perguntas da pesquisa
 
-- Como é a rede de colaboração feminida e masculina?
+- Como é a rede de colaboração feminida e masculina(apenas unb e externo)?
     - A rede feminina é semelhante a masculina visualmente?
 - Avarage degree(f/m)
 - Mostrar apenas pesquisadoras mulheres e apenas pesquisadores homens
@@ -45,11 +47,22 @@ Media de acerto = 71,6%
 | UFRN         |  29   |    28   |   0   |        1          |
 | UnB          |  30   |    28   |   0   |        2          |
 | USP          |  40   |    39   |   0   |        1          |
+| Outros       | 9737  |   3766  |   0   |               |
 | Total        |  201  |    194  |   0   |        7          |
 
 Media de acerto = 96,5%
 
 Entre os nomes não identificados, podemos verificar nomes unisex como Li e nomes não muito usuais como Routo, Dibio, Altigran, entre outros
+
+#### Verificação da função de gênero com os dados finais
+
+| Universidade | Total    | Acertos  | Erros | Não identificados |
+|--------------|----------|----------|-------|-------------------|
+| UnB          | 31       | 29       | 0     | 2                 |
+| Outros       | 1251     | 1121     | 1     | 130               |
+| **Total**    | **1282** | **1150** | **0** | **132**           |
+
+Media de acerto $\approx$ 90%
 
 
 ### 2 - Obter os participantes da amostra
@@ -67,3 +80,52 @@ O processo para obter as pesquisas foi um pouco mais complicado. Decidiu-se que 
 A alternativa encontrada, então, foi baixar todos os curriculos dos professores. Porem, não foi encontrado lattes de alguns professores. O total de documentos obtidos foi 190 de 201 curriculos.
 
 O proximo passo foi obter os nomes de citação de cada um dos professores, que foi colocado em um dicionario onde o nome do professor é a chave e o valor associado a essa chave é a lista de nomes associados aquele professor.
+
+Para as pesquisas, tambem foi criado um dicionario, onde a chave é o nome da publicação e o valor associado a chave é uma lista com os nomes dos autores da publicação
+
+### 4 - Comandos Cypher para preencher o BD
+
+Antes de fazer as funções que criam documentos cypher com os dados obtidos dos co-autores e dos artigos, primeiro temos que imaginar como seria cada um dos comandos cypher.
+
+Primeiro esbolçamos a criação dos autores, que seria similar à criação dos autores da UnB, não sendo necessario nem uma Instituição nem ligar o autor a instituição.
+
+- UnB
+
+```
+CREATE(n:Institution {name: 'UnB', color:'#E466CB'});
+
+CREATE(a:Author {name: '" + self.name + "', gender: '" + self.gender +"', lattesurl: '" + self.lattesurl + "', email: '" + self.email + "', title: '" + self.titulo+"', title_when_where: '" + self.titulo_ano_local+"', areas: '" + self.areas + "'});
+
+MATCH(i:Institution {name: 'UnB'}),(a:Author {name: '"+d.name+"'}) MERGE (a)-[r:ASSOCIATED_TO]->(i);
+```
+
+- Outros Autores
+
+```
+CREATE (a:Author{name: ' + name + ', gender: '+ gender + '}); 
+```
+
+Para pesquisas, criaremos outro arquivo .cypher onde criaremos a pesquisa e depois vincularemos os autores à elas.
+
+- Criação das pesquisas
+
+```
+CREATE (p:Paper {title: ' + title + '});
+```
+E dentro do loop vincularemos os autores da pesquisa à pesquisa, um por vez.
+
+```
+MATCH(p:Paper {title:' + title + '}), (a:Author {name:' + name + '}) MERGE (a)-[r:WROTE]->(p);
+```
+
+E com isso, temos todos os comandos cypher em três arquivos: 
+
+- docentes-unb.cypher
+- docentes-outros.cypher
+- pesquisas.cypher
+
+Que devem ser inseridos na ordem mencionada acima no BD.
+
+Assim, finalizamos a parte 2 do projeto, finalizando o tratamento de dados, obtendo o seguinte grafo:
+
+![Final Result](./imagens/graph.png)
