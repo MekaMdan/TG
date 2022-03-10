@@ -13,9 +13,9 @@
 ## Progresso das Respostas
 
 - [X] Mostrar apenas pesquisadoras mulheres (e suas pesquisas) e apenas homens (e suas pesquisas)
-- [ ] Rede de colabolação interna
-- [?] Rede de colabolação externa
-- [ ] Obter rede de colabolação masculina e feminina
+- [X] Rede de colabolação interna
+- [X] Rede de colabolação externa
+- [X] Obter rede de colabolação masculina e feminina
 - [ ] Avarage Degree feminina/ masculina
 
 ## Pensamentos para criar as queries
@@ -61,7 +61,7 @@
     ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co-semunb.png)
 
     Grafos gerados por autoras mulheres:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
+    ![Pesquisas por autores Unb - Mulheres](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
 
 
 
@@ -119,6 +119,20 @@
 
 3. Rede de colabolação externa
     Talvez seja a mesma coisa do grafo de autores separados por genero sem co-autores da unb
+
+    Sem co-autores do genero oposto da unb:
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE NOT (co{gender:"M"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE NOT (co{gender:"F"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+    ```
+
+    Grafos gerados por autores Homens:
+    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co-semunb.png)
+
+    Grafos gerados por autoras mulheres:
+    ![Pesquisas por autores Unb - Mulheres](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
+
 4. 
 5. 
 
