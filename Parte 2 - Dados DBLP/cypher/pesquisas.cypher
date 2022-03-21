@@ -2678,8 +2678,8 @@ OPTIONAL MATCH (a:Author {name:'Thiago Paulo Faleiros'}), (p:Paper {title:'Gener
 OPTIONAL MATCH (a:Author {name:'Maristela Terto De Holanda'}), (p:Paper {title:'Generating Artificial Data To Evaluate Machine Learning Predictive Algorithms For Bus Travel Time'}) CREATE (a)-[r:AUTHORING]->(p);
 CREATE (p:Paper{title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'});
 OPTIONAL MATCH (a:Author {name:'Maristela Terto De Holanda'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
-OPTIONAL MATCH (a:Author {name:'Aleteia Araujo'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
-OPTIONAL MATCH (a:Author {name:'Roberto Morao'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
+OPTIONAL MATCH (a:Author {name:'Aleteia Patricia Favacho De Araujo'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
+OPTIONAL MATCH (a:Author {name:'Roberto Mourao'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
 OPTIONAL MATCH (a:Author {name:'Maria Emilia Machado Telles Walter'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
 OPTIONAL MATCH (a:Author {name:'Guilherme Novaes Ramos'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);
 OPTIONAL MATCH (a:Author {name:'George Von Borries'}), (p:Paper {title:'Brazilian School Girls Perspectives On A Computer Science Major: Mining Association Rules'}) CREATE (a)-[r:AUTHORING]->(p);

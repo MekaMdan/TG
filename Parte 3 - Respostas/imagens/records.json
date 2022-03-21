@@ -1,0 +1,74 @@
+﻿[
+  {
+    "nodes": [
+      {
+        "identity": -14,
+        "labels": [
+          "Author"
+        ],
+        "properties": {
+"name": "Author",
+"indexes": [],
+"constraints": [
+            "Constraint( id=6, name='constraint_293d3e9e', type='UNIQUENESS', schema=(:Author {name}), ownedIndex=5 )"
+          ]
+        }
+      },
+      {
+        "identity": -15,
+        "labels": [
+          "Paper"
+        ],
+        "properties": {
+"name": "Paper",
+"indexes": [],
+"constraints": [
+            "Constraint( id=4, name='constraint_1439150b', type='UNIQUENESS', schema=(:Paper {title}), ownedIndex=3 )"
+          ]
+        }
+      },
+      {
+        "identity": -13,
+        "labels": [
+          "Institution"
+        ],
+        "properties": {
+"name": "Institution",
+"indexes": [],
+"constraints": [
+            "Constraint( id=8, name='constraint_350d222c', type='UNIQUENESS', schema=(:Institution {name}), ownedIndex=7 )"
+          ]
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "identity": -10,
+        "start": -14,
+        "end": -13,
+        "type": "ASSOCIATED_TO",
+        "properties": {
+
+        }
+      },
+      {
+        "identity": -11,
+        "start": -14,
+        "end": -15,
+        "type": "AUTHORING",
+        "properties": {
+
+        }
+      },
+      {
+        "identity": -12,
+        "start": -14,
+        "end": -14,
+        "type": "COAUTHOR",
+        "properties": {
+
+        }
+      }
+    ]
+  }
+]

@@ -16,7 +16,7 @@
 - [X] Rede de colabolação interna
 - [X] Rede de colabolação externa
 - [X] Obter rede de colabolação masculina e feminina
-- [ ] Avarage Degree feminina/ masculina
+- [X] Avarage Degree feminina/ masculina
 
 ## Pensamentos para criar as queries
 
@@ -133,8 +133,56 @@
     Grafos gerados por autoras mulheres:
     ![Pesquisas por autores Unb - Mulheres](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
 
-4. 
-5. 
+4.  Rede de colaboração total f/m
+- F :
+    ```
+    Match (a:Author{gender:'F'})-[r:COAUTHOR]-(co:Author) WHERE (a)-[:ASSOCIATED_TO]-(:Institution) return a,r,co
+    ```
+    ![Rede feminina](./imagens/grafo-rede-colaboracao-f.png)
+    ![Tabela Rede feminina](./imagens/rede-colaboracao-f-dados.png)
+
+- M :
+    ```
+    Match (a:Author{gender:'M'})-[r:COAUTHOR]-(co:Author) WHERE (a)-[:ASSOCIATED_TO]-(:Institution) return a,r,co
+    ```
+    ![Rede Maculina](./imagens/grafo-rede-colaboracao-m.png)
+    ![Tabela Rede Maculina](./imagens/rede-colaboracao-m-dados.png)
+5. Primeiro, cria-se relação COAUTHOR que relaciona coautores a autores com a pesquisa como campo titulo. Isso irá criar apenas coautores externos a instituição
+
+    ```
+    MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) CREATE (co)-[rn:COAUTHOR{title: p.title}]->(a) return a,p,i,rs,r,co,rco,rn
+    ```
+    
+    ![Criação de coautores](./imagens/graph-coauthor.png)
+
+Average Degree = Numero de relacionamentos/ numero de nós 
+
+Filtramos os nós pelas pesquisas seguintes:
+    
+- Filtrar nós relacionados a UnB (Os nós de pesquisa)
+
+    ```
+    Match (a:Author{gender:' '})-[r:ASSOCIATED_TO]-(i:Institution) return a
+    ```
+
+- Filtrar relacionamentos de coautores
+
+    ```
+    MATCH (a:Author{gender:' '})-[c:COAUTHOR]-(co:Author) Where (a)-[:ASSOCIATED_TO]-(:Institution) return a,co,c
+    ```
+- Filtrar relacionamentos de pesquisas 
+    ```
+    Match (a:Author{gender:' '})-[r:AUTHORING]-(p:Paper) where (a)-[:ASSOCIATED_TO]-(:Institution{name:'UnB'}) RETURN a,r,p
+    ```
+
+    |                   | Feminino | Masculino |
+    |-------------------|----------|-----------|
+    | Nós               | 10       | 21        |
+    | Coautores         | 1414     | 2129      |
+    | Pesquisas         | 256      | 523       |
+    | Average pesquisa  | 141,4    | 101,38    |
+    | Average coautores | 25,6     | 24,9      |
+
 
 ## Queries finais para cada pergunta
 
