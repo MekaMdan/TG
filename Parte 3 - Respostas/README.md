@@ -4,7 +4,7 @@
 
 ## Objetivos
 
-- [ ] Criar queries para as seguintes perguntas
+- [X] Criar queries para as seguintes perguntas
     - Como é a rede de colaboração feminina e masculina (unb-unb e unb-externo)? 
     - Se a rede feminina é semelhante a masculina visualmente
     - Achar o avarage degree feminino e masculino
@@ -180,8 +180,8 @@ Filtramos os nós pelas pesquisas seguintes:
     | Nós               | 10       | 21        |
     | Coautores         | 1414     | 2129      |
     | Pesquisas         | 256      | 523       |
-    | Average pesquisa  | 141,4    | 101,38    |
-    | Average coautores | 25,6     | 24,9      |
+    | Average coautores | 141,4    | 101,38    |
+    | Average pesquisa  | 25,6     | 24,9      |
 
 
 ## Queries finais para cada pergunta

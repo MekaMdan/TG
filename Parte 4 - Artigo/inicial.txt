@@ -1,0 +1,22 @@
+Escolher titulo 
+
+Resumo
+
+A área de computação é uma área majoritariamente masculina e isso se torna ainda mais evidente na pós graduação. Utilizando os dados de professores 
+da pós graduação de 
+
+Referencial Teorico:
+a. Mulheres na Computação
+b. Banco de dados em grafo
+c. Redes de colabolação
+
+Trabalhos Relacionados:
+a.
+b.
+c.
+
+Procurar essas palavras chaves: rede de colaboração, mulheres na computação, pesquisas, mulheres, mulheres na pós graduação
+
+ultimo paragrafo: diferentemente de todos esses artigos apresentados, vamos fazer uma rede de colabolação baseado em genero...
+
+Key words: NoSQL, DB, Comunidade Científica, Rede Social, Grafos
