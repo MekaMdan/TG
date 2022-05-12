@@ -9,7 +9,7 @@ Nesta etapa, os dados utilizados serão obtidos atraves de webscraping sites de 
 - [x] Criar função que suponha o genero pelo nome
 - [x] Obter professores da amostra e aplicar função de gênero
 - [x] Obter pesquisas associadas aos professores
-- [ ] Criação dos comandos chypher para preencher o banco de dados
+- [x] Criação dos comandos chypher para preencher o banco de dados
 
 ### 0 - Perguntas da pesquisa
 
@@ -47,7 +47,6 @@ Media de acerto = 71,6%
 | UFRN         |  29   |    28   |   0   |        1          |
 | UnB          |  30   |    28   |   0   |        2          |
 | USP          |  40   |    39   |   0   |        1          |
-| Outros       | 9737  |   3766  |   0   |               |
 | Total        |  201  |    194  |   0   |        7          |
 
 Media de acerto = 96,5%
@@ -59,11 +58,11 @@ Entre os nomes não identificados, podemos verificar nomes unisex como Li e nome
 | Universidade | Total    | Acertos  | Erros | Não identificados |
 |--------------|----------|----------|-------|-------------------|
 | UnB          | 31       | 29       | 0     | 2                 |
-| Outros       | 1251     | 1121     | 1     | 130               |
-| **Total**    | **1282** | **1150** | **0** | **132**           |
+| Outros       | 1251     | 1120     | 1     | 130               |
+| **Total**    | **1282** | **1149** | **1** | **132**           |
 
 Media de acerto $\approx$ 90%
-
+Erro : Joni Da Silva Fraga, programa determinou como F
 
 ### 2 - Obter os participantes da amostra
 

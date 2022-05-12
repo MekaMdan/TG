@@ -87,6 +87,8 @@
     Geral:
     ```
     MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co)-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+
+    MATCH (n)-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
     ```
     ![Grafo de colabolação interna geral](./imagens/graph-unb-pesq-interna-geral.png)
 
@@ -104,11 +106,15 @@
     ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-f-to-f.png)
 
 
+    22 autores - 9 mulheres, 238 relacionamentos
+
     Só de homens:
     ```
     MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co)-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
 
     MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"M"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co{gender:"M"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
+
+    MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
     ```
     M-geral
     ![Grafo de colabolação interna masculina-geral](./imagens/graph-unb-pesq-interna-m-to-geral.png)
@@ -116,6 +122,8 @@
     M-M
     ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-m-to-m.png)
 
+
+    25 nós - 17 M - 262 conexões
 
 3. Rede de colabolação externa
     Talvez seja a mesma coisa do grafo de autores separados por genero sem co-autores da unb
@@ -186,8 +194,30 @@ Filtramos os nós pelas pesquisas seguintes:
 
 ## Queries finais para cada pergunta
 
-1.
-2.
-3.
-4.
-5.
+
+1. Pesquisa: 
+```
+MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:" "})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
+```
+2. Rede de colabolação interna: 
+
+```
+MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
+```
+
+3. Rede de colabolação externa:
+```
+MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and not (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
+```
+4. Rede de Colaboração Geral:
+```
+MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
+```
+5. Criação de Coautores: 
+```
+MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) CREATE (co)-[rn:COAUTHOR{title: p.title}]->(a) return a,p,i,rs,r,co,rco,rn
+```
+6. Ver Grafo: 
+```
+MATCH (n) RETURN n
+```

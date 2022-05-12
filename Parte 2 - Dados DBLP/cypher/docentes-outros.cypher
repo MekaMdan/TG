@@ -935,7 +935,7 @@ CREATE (a:Author{name:'Juan Edi', gender: 'M'});
 CREATE (a:Author{name:'Deivid Vale', gender: 'M'});
 CREATE (a:Author{name:'Ariane Alves Almeida', gender: 'F'});
 CREATE (a:Author{name:'Gabriel Ferreira Silva', gender: 'M'});
-CREATE (a:Author{name:'Chowdary .b. Adsumilli', gender: '?'});
+CREATE (a:Author{name:'Chowdary B. Adsumilli', gender: 'M'});
 CREATE (a:Author{name:'Marco Carli', gender: 'M'});
 CREATE (a:Author{name:'Sanjit K Mitra', gender: '?'});
 CREATE (a:Author{name:'John M Foley', gender: 'M'});

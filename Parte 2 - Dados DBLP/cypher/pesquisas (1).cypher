@@ -3434,12 +3434,12 @@ MATCH (p:Paper{title:'Reconfigurable systems for sequence alignment and for gene
 MATCH (p:Paper{title:'Reconfigurable systems for sequence alignment and for general dynamic programming' }), (a:Author{name:'Mauricio Ayala Rincon'}) MERGE (a)-[r: AUTHORING]->(p);
 MATCH (p:Paper{title:'Reconfigurable systems for sequence alignment and for general dynamic programming' }), (a:Author{name:'Luis Gustavo Carvalho'}) MERGE (a)-[r: AUTHORING]->(p);
 MATCH (p:Paper{title:'Reconfigurable systems for sequence alignment and for general dynamic programming' }), (a:Author{name:'Carlos Humberto Llanos Quintero'}) MERGE (a)-[r: AUTHORING]->(p);
-MATCH (p:Paper{title:'Reconfigurable systems for sequence alignment and for general dynamic programming' }), (a:Author{name:'Reiner W. Hartenstein'}) MERGE (a)-[r: AUTHORING]->(p);
+MATCH (p:Paper{title:'Reconfigurable systems for sequence alignment and for general dynamic programming' }), (a:Author{name:'Reiner W Hartenstein'}) MERGE (a)-[r: AUTHORING]->(p);
 CREATE (p:Paper{title:'Prototyping time- and space-efficient computations of algebraic operations over dynamically reconfigurable systems modeled by rewriting-logic'});
 MATCH (p:Paper{title:'Prototyping time- and space-efficient computations of algebraic operations over dynamically reconfigurable systems modeled by rewriting-logic' }), (a:Author{name:'Mauricio Ayala Rincon'}) MERGE (a)-[r: AUTHORING]->(p);
 MATCH (p:Paper{title:'Prototyping time- and space-efficient computations of algebraic operations over dynamically reconfigurable systems modeled by rewriting-logic' }), (a:Author{name:'Carlos Humberto Llanos Quintero'}) MERGE (a)-[r: AUTHORING]->(p);
 MATCH (p:Paper{title:'Prototyping time- and space-efficient computations of algebraic operations over dynamically reconfigurable systems modeled by rewriting-logic' }), (a:Author{name:'Ricardo Pezzuol Jacobi'}) MERGE (a)-[r: AUTHORING]->(p);
-MATCH (p:Paper{title:'Prototyping time- and space-efficient computations of algebraic operations over dynamically reconfigurable systems modeled by rewriting-logic' }), (a:Author{name:'Reiner W. Hartenstein'}) MERGE (a)-[r: AUTHORING]->(p);
+MATCH (p:Paper{title:'Prototyping time- and space-efficient computations of algebraic operations over dynamically reconfigurable systems modeled by rewriting-logic' }), (a:Author{name:'Reiner W Hartenstein'}) MERGE (a)-[r: AUTHORING]->(p);
 CREATE (p:Paper{title:'DSOA: A Service Oriented Architecture for Ubiquitous Applications'});
 MATCH (p:Paper{title:'DSOA: A Service Oriented Architecture for Ubiquitous Applications' }), (a:Author{name:'Fabricio Nogueira Buzeto'}) MERGE (a)-[r: AUTHORING]->(p);
 MATCH (p:Paper{title:'DSOA: A Service Oriented Architecture for Ubiquitous Applications' }), (a:Author{name:'Carlos Botelho De Paula Filho'}) MERGE (a)-[r: AUTHORING]->(p);

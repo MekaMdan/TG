@@ -12,8 +12,8 @@
 - [x] Palavras-Chave
 - [ ] Introdução
 - [x] Trabalhos Relacionados
-- [ ] Introdução
-- [ ] Metodologia
+- [x] REFERENCIAL TEóRICO
+- [x] Metodologia
 - [ ] Resultado
 - [ ] Conclusão
 - [ ] Referencias
