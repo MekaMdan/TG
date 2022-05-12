@@ -29,7 +29,7 @@
     MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) return a,p,i,rs,r
     ```
     Gerando o seguinte grafo:
-    ![Pesquisas por autores Unb](./imagens/graph-pesq-unb-autores.png)
+    ![Pesquisas por autores Unb](./imagens/periodicos/graph-pesq-unb-autores.png)
 
     Agora precisamos separar por genero
 
@@ -42,10 +42,10 @@
     ```
 
     Grafos gerados por autores Homens:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m.png)
+    ![Pesquisas por autores Unb - Homens](./imagens/periodicos/graph-unb-pesq-autores-m.png)
 
     Grafos gerados por autoras mulheres:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f.png)
+    ![Pesquisas por autores Unb - Homens](./imagens/periodicos/graph-unb-pesq-autores-f.png)
     
     
     Iremos excluir co-autores que tem um relacionamento
@@ -58,10 +58,10 @@
     ```
 
     Grafos gerados por autores Homens:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co-semunb.png)
+    ![Pesquisas por autores Unb - Homens](./imagens/periodicos/graph-unb-pesq-autores-m-co-semunb.png)
 
     Grafos gerados por autoras mulheres:
-    ![Pesquisas por autores Unb - Mulheres](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
+    ![Pesquisas por autores Unb - Mulheres](./imagens/periodicos/graph-unb-pesq-autores-f-co-semunb.png)
 
 
 
@@ -74,10 +74,10 @@
     ```
 
     Grafos gerados por autores Homens:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co.png)
+    ![Pesquisas por autores Unb - Homens](./imagens/periodicos/graph-unb-pesq-autores-m-co.png)
 
     Grafos gerados por autoras mulheres:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-f-co.png)
+    ![Pesquisas por autores Unb - Homens](./imagens/periodicos/graph-unb-pesq-autores-f-co.png)
 
 
 
@@ -90,7 +90,7 @@
 
     MATCH (n)-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
     ```
-    ![Grafo de colabolação interna geral](./imagens/graph-unb-pesq-interna-geral.png)
+    ![Grafo de colabolação interna geral](./imagens/periodicos/graph-unb-pesq-interna-geral.png)
 
 
     Só de mulheres:
@@ -100,13 +100,15 @@
     MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author{gender:"F"})-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) WHERE (co{gender:"F"})-[:ASSOCIATED_TO]-(:Institution) return a,p,i,rs,r,co,rco
     ```
     F-geral
-    ![Grafo de colabolação interna feminina-geral](./imagens/graph-unb-pesq-interna-f-to-geral.png)
+    ![Grafo de colabolação interna feminina-geral](./imagens/periodicos/graph-unb-pesq-interna-f-to-geral.png)
     
     F-F
-    ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-f-to-f.png)
+    ![Grafo de colabolação interna feminina-feminina](./imagens/periodicos/graph-unb-pesq-interna-f-to-f.png)
 
 
-    22 autores - 9 mulheres, 238 relacionamentos
+    (periodicos)22 autores - 9 mulheres, 238 relacionamentos
+
+    (trabalhos) 25 autores - 9 mulheres, 776 conexões
 
     Só de homens:
     ```
@@ -117,13 +119,14 @@
     MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
     ```
     M-geral
-    ![Grafo de colabolação interna masculina-geral](./imagens/graph-unb-pesq-interna-m-to-geral.png)
+    ![Grafo de colabolação interna masculina-geral](./imagens/periodicos/graph-unb-pesq-interna-m-to-geral.png)
     
     M-M
-    ![Grafo de colabolação interna feminina-feminina](./imagens/graph-unb-pesq-interna-m-to-m.png)
+    ![Grafo de colabolação interna feminina-feminina](./imagens/periodicos/graph-unb-pesq-interna-m-to-m.png)
 
 
-    25 nós - 17 M - 262 conexões
+    (periodicos) 25 nós - 17 M - 262 conexões
+    (trabalhos) 28 autores - 19 homens - 884 conexões
 
 3. Rede de colabolação externa
     Talvez seja a mesma coisa do grafo de autores separados por genero sem co-autores da unb
@@ -136,32 +139,32 @@
     ```
 
     Grafos gerados por autores Homens:
-    ![Pesquisas por autores Unb - Homens](./imagens/graph-unb-pesq-autores-m-co-semunb.png)
+    ![Pesquisas por autores Unb - Homens](./imagens/periodicos/graph-unb-pesq-autores-m-co-semunb.png)
 
     Grafos gerados por autoras mulheres:
-    ![Pesquisas por autores Unb - Mulheres](./imagens/graph-unb-pesq-autores-f-co-semunb.png)
+    ![Pesquisas por autores Unb - Mulheres](./imagens/periodicos/graph-unb-pesq-autores-f-co-semunb.png)
 
 4.  Rede de colaboração total f/m
 - F :
     ```
     Match (a:Author{gender:'F'})-[r:COAUTHOR]-(co:Author) WHERE (a)-[:ASSOCIATED_TO]-(:Institution) return a,r,co
     ```
-    ![Rede feminina](./imagens/grafo-rede-colaboracao-f.png)
-    ![Tabela Rede feminina](./imagens/rede-colaboracao-f-dados.png)
+    ![Rede feminina](./imagens/periodicos/grafo-rede-colaboracao-f.png)
+    ![Tabela Rede feminina](./imagens/periodicos/rede-colaboracao-f-dados.png)
 
 - M :
     ```
     Match (a:Author{gender:'M'})-[r:COAUTHOR]-(co:Author) WHERE (a)-[:ASSOCIATED_TO]-(:Institution) return a,r,co
     ```
-    ![Rede Maculina](./imagens/grafo-rede-colaboracao-m.png)
-    ![Tabela Rede Maculina](./imagens/rede-colaboracao-m-dados.png)
+    ![Rede Maculina](./imagens/periodicos/grafo-rede-colaboracao-m.png)
+    ![Tabela Rede Maculina](./imagens/periodicos/rede-colaboracao-m-dados.png)
 5. Primeiro, cria-se relação COAUTHOR que relaciona coautores a autores com a pesquisa como campo titulo. Isso irá criar apenas coautores externos a instituição
 
     ```
     MATCH (co:Author)-[rco:AUTHORING]-(p:Paper)<-[rs:AUTHORING]-(a:Author)-[r:ASSOCIATED_TO]-(i:Institution {name: 'UnB'}) CREATE (co)-[rn:COAUTHOR{title: p.title}]->(a) return a,p,i,rs,r,co,rco,rn
     ```
     
-    ![Criação de coautores](./imagens/graph-coauthor.png)
+    ![Criação de coautores](./imagens/periodicos/graph-coauthor.png)
 
 Average Degree = Numero de relacionamentos/ numero de nós 
 
@@ -183,6 +186,8 @@ Filtramos os nós pelas pesquisas seguintes:
     Match (a:Author{gender:' '})-[r:AUTHORING]-(p:Paper) where (a)-[:ASSOCIATED_TO]-(:Institution{name:'UnB'}) RETURN a,r,p
     ```
 
+    Periodicos:
+
     |                   | Feminino | Masculino |
     |-------------------|----------|-----------|
     | Nós               | 10       | 21        |
@@ -190,6 +195,7 @@ Filtramos os nós pelas pesquisas seguintes:
     | Pesquisas         | 256      | 523       |
     | Average coautores | 141,4    | 101,38    |
     | Average pesquisa  | 25,6     | 24,9      |
+
 
 
 ## Queries finais para cada pergunta

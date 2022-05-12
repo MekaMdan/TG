@@ -58,9 +58,9 @@ Entre os nomes não identificados, podemos verificar nomes unisex como Li e nome
 | Universidade | Total    | Acertos  | Erros | Não identificados |
 |--------------|----------|----------|-------|-------------------|
 | UnB          | 31       | 29       | 0     | 2                 |
-| Periodicos      | 1344     | 1217     | 1     | 126               |
-|   Trabalhos     | 2126     |  2015    | 0     |   111               |
-| **Total**    | **3501** | **3261** | **1** | **239**           |
+| Periodicos      | 1217     | 1105     | 1     | 126               |
+|   Trabalhos     | 2015     |  1904    | 0     |   111               |
+| **Total**    | **3263** | **3038** | **1** | **239**           |
 
 Media de acerto total $\approx$ 93%
 
