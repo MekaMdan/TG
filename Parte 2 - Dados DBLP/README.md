@@ -58,10 +58,16 @@ Entre os nomes não identificados, podemos verificar nomes unisex como Li e nome
 | Universidade | Total    | Acertos  | Erros | Não identificados |
 |--------------|----------|----------|-------|-------------------|
 | UnB          | 31       | 29       | 0     | 2                 |
-| Outros       | 1251     | 1120     | 1     | 130               |
-| **Total**    | **1282** | **1149** | **1** | **132**           |
+| Periodicos      | 1344     | 1217     | 1     | 126               |
+|   Trabalhos     | 2126     |  2015    | 0     |   111               |
+| **Total**    | **3501** | **3261** | **1** | **239**           |
 
-Media de acerto $\approx$ 90%
+Media de acerto total $\approx$ 93%
+
+Media de acerto (periodico) = 90%
+
+media de acerto (trabalhos) = 94%
+
 Erro : Joni Da Silva Fraga, programa determinou como F
 
 ### 2 - Obter os participantes da amostra

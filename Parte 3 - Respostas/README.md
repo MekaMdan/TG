@@ -202,16 +202,16 @@ MATCH (p:Paper)<-[rs:AUTHORING]-(a:Author{gender:" "})-[r:ASSOCIATED_TO]-(i:Inst
 2. Rede de colabolação interna: 
 
 ```
-MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
+MATCH (n{gender:' '})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
 ```
 
 3. Rede de colabolação externa:
 ```
-MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and not (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
+MATCH (n{gender:' '})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) and not (a)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
 ```
 4. Rede de Colaboração Geral:
 ```
-MATCH (n{gender:'M'})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
+MATCH (n{gender:' '})-[r:COAUTHOR]-(a) WHERE (n)-[:ASSOCIATED_TO]-(:Institution) return a,n,r
 ```
 5. Criação de Coautores: 
 ```
